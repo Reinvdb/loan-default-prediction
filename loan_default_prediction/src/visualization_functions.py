@@ -1,5 +1,6 @@
 import pandas as pd
 import plotly.express as px
+from src.constants import PATH_VISUALIZATION_EDA
 
 
 def plot_histogram(df: pd.DataFrame, feature: str, save: bool = False) -> None:
@@ -19,7 +20,9 @@ def plot_histogram(df: pd.DataFrame, feature: str, save: bool = False) -> None:
     )
 
     (
-        fig.write_image(f"{VIZUALIZATION_DIR}/histogram_{feature}.png", format="png")
+        fig.write_image(
+            f"{PATH_VISUALIZATION_EDA}/histogram_{feature}.png", format="png"
+        )
         if save
         else fig.show()
     )
@@ -45,7 +48,7 @@ def plot_histogram_per_category(
 
     (
         fig.write_image(
-            f"{VIZUALIZATION_DIR}/histogram_{feature}_per_{category_feature}.png",
+            f"{PATH_VISUALIZATION_EDA}/histogram_{feature}_per_{category_feature}.png",
             format="png",
         )
         if save
@@ -68,7 +71,7 @@ def plot_boxplot(df: pd.DataFrame, feature: str, save: bool = False) -> None:
     )
 
     (
-        fig.write_image(f"{VIZUALIZATION_DIR}/boxplot_{feature}.png", format="png")
+        fig.write_image(f"{PATH_VISUALIZATION_EDA}/boxplot_{feature}.png", format="png")
         if save
         else fig.show()
     )
@@ -92,7 +95,7 @@ def plot_boxplot_per_category(
 
     (
         fig.write_image(
-            f"{VIZUALIZATION_DIR}/boxplot_{feature}_per_{category_feature}.png",
+            f"{PATH_VISUALIZATION_EDA}/boxplot_{feature}_per_{category_feature}.png",
             format="png",
         )
         if save
@@ -115,7 +118,7 @@ def plot_violin(df: pd.DataFrame, feature: str, save: bool = False) -> None:
     )
 
     (
-        fig.write_image(f"{VIZUALIZATION_DIR}/violin_{feature}.png", format="png")
+        fig.write_image(f"{PATH_VISUALIZATION_EDA}/violin_{feature}.png", format="png")
         if save
         else fig.show()
     )
@@ -139,7 +142,7 @@ def plot_violin_per_category(
 
     (
         fig.write_image(
-            f"{VIZUALIZATION_DIR}/violin_{feature}_per_{category_feature}.png",
+            f"{PATH_VISUALIZATION_EDA}/violin_{feature}_per_{category_feature}.png",
             format="png",
         )
         if save
@@ -166,7 +169,7 @@ def plot_bar_frequency(df: pd.DataFrame, feature: str, save: bool = False) -> No
 
     (
         fig.write_image(
-            f"{VIZUALIZATION_DIR}/bar_frequency_{feature}.png", format="png"
+            f"{PATH_VISUALIZATION_EDA}/bar_frequency_{feature}.png", format="png"
         )
         if save
         else fig.show()
@@ -197,7 +200,7 @@ def plot_bar_frequency_per_category(
 
     (
         fig.write_image(
-            f"{VIZUALIZATION_DIR}/bar_frequency_{feature}_per_{category_feature}.png",
+            f"{PATH_VISUALIZATION_EDA}/bar_frequency_{feature}_per_{category_feature}.png",
             format="png",
         )
         if save
@@ -225,7 +228,8 @@ def plot_scatter(
 
     (
         fig.write_image(
-            f"{VIZUALIZATION_DIR}/scatter_{x_feature}_{y_feature}.png", format="png"
+            f"{PATH_VISUALIZATION_EDA}/scatter_{x_feature}_{y_feature}.png",
+            format="png",
         )
         if save
         else fig.show()
@@ -253,7 +257,9 @@ def plot_correlation_heatmap(df: pd.DataFrame, save: bool = False) -> None:
     )
 
     (
-        fig.write_image(f"{VIZUALIZATION_DIR}/correlation_matrix.png", format="png")
+        fig.write_image(
+            f"{PATH_VISUALIZATION_EDA}/correlation_matrix.png", format="png"
+        )
         if save
         else fig.show()
     )

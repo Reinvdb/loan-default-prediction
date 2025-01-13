@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def check_missing_values(df: pd.DataFrame) -> None:
     """
     Function to calculate total and relative missing values per feature
@@ -14,6 +17,8 @@ def check_missing_values(df: pd.DataFrame) -> None:
 
     for i, col in enumerate(df.columns):
         print(f"{col}: {ratios[i]}")
+
+    print("/n")
 
 
 def check_outliers(df: pd.DataFrame) -> None:
@@ -41,3 +46,5 @@ def check_outliers(df: pd.DataFrame) -> None:
 
     for i, col in enumerate(df.columns):
         print(f"{col}: {ratios[i]}")
+
+    print("/n")
