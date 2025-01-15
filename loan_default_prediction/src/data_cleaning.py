@@ -18,7 +18,7 @@ def check_missing_values(df: pd.DataFrame) -> None:
     for i, col in enumerate(df.columns):
         print(f"{col}: {ratios[i]}")
 
-    print("/n")
+    print("")
 
 
 def check_outliers(df: pd.DataFrame) -> None:
@@ -47,4 +47,4 @@ def check_outliers(df: pd.DataFrame) -> None:
     for i, col in enumerate(df.columns):
         print(f"{col}: {ratios[i]}")
 
-    print("/n")
+    print("")
